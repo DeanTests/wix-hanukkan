@@ -3,7 +3,7 @@ $w('#dynamicDataset').onReady(() => {
     if (url) {
         $w('#model').src = url
         $w('#loadModel').show()
-    }
+    } else $w('#model').hide()
 })
 
-$w('#loadModel').onClick(() => $w('#model').show())
+$w('#loadModel').onClick(() => $w('#img').hide())
