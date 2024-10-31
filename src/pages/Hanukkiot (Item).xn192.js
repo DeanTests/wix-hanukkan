@@ -1,10 +1,9 @@
-let currentItem
 $w('#dynamicDataset').onReady(() => {
-    currentItem = $w('#dynamicDataset').getCurrentItem()
-    if (currentItem.widgetUrl) $w('#loadModel').show()
+    const url = $w('#dynamicDataset').getCurrentItem().widgetUrl
+    if (url) {
+        $w('#model').src = url
+        $w('#loadModel').show()
+    }
 })
 
-$w('#loadModel').onClick(() => {
-    $w('#model').src = currentItem.widgetUrl
-    setTimeout($w('#model').show, 500)
-})
+$w('#loadModel').onClick(() => $w('#model').show())
